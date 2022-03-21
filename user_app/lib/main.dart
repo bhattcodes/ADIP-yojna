@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:user_app/screens/docs_input.dart';
 import 'package:user_app/screens/splash_screen.dart';
 
 void main() async {
