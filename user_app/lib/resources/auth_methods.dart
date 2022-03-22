@@ -10,7 +10,7 @@ class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  late UserCredential cred;
+  UserCredential? cred;
 
   void signInWithGoogle() async {
     // Trigger the authentication flow
