@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, unnecessary_new
 
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import '../resources/auth_methods.dart';
 
@@ -10,8 +9,6 @@ class SignInButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAuth auth = FirebaseAuth.instance;
-
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(30.0),

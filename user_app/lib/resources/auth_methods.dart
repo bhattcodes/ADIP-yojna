@@ -11,6 +11,7 @@ class AuthMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   UserCredential? cred;
+  String uid = "";
 
   void signInWithGoogle() async {
     // Trigger the authentication flow
@@ -25,6 +26,8 @@ class AuthMethods {
     );
     // Once signed in, return the UserCredential
     cred = await _auth.signInWithCredential(credential);
+
+    uid = _auth.currentUser!.uid;
   }
 
   //signup user
