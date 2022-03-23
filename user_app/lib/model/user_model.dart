@@ -6,6 +6,7 @@ class User {
   final String mobile;
   final String email;
   final String state;
+  final bool availedScheme;
 
   const User({
     required this.udid,
@@ -13,6 +14,7 @@ class User {
     required this.mobile,
     required this.email,
     required this.state,
+    this.availedScheme = false,
   });
 
   Map<String, dynamic> toJson() => {
@@ -21,6 +23,7 @@ class User {
         "mobile": mobile,
         "email": email,
         "state": state,
+        "availedScheme": availedScheme,
       };
 
   //take a docmnt snap and convert it into user model
@@ -33,6 +36,7 @@ class User {
       mobile: snapshot['mobile'],
       email: snapshot['email'],
       state: snapshot['state'],
+      availedScheme: snapshot['availedScheme'],
     );
   }
 }
