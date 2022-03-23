@@ -30,6 +30,33 @@ class AuthMethods {
     uid = _auth.currentUser!.uid;
   }
 
+  Future<String> addUdids({
+    required String udid,
+  }) async {
+    String res = "some error occured";
+    try {
+      if (udid.isNotEmpty) {
+        // adding user with null values!
+        model.User user = model.User(
+          udid: udid,
+          name: "",
+          mobile: "",
+          email: "",
+          state: "",
+        );
+
+        await _firestore.collection('users').doc(udid).set(
+              user.toJson(), //since the firestore accepts MAP so we created the convertor of string to json in user.dart
+            );
+
+        res = "success";
+      }
+    } catch (err) {
+      res = err.toString();
+    }
+    return res;
+  }
+
   //signup user
   Future<String> signUpUser({
     required String udid,
