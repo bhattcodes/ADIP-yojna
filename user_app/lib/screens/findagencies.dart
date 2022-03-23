@@ -10,7 +10,6 @@ class FindAgencies extends StatefulWidget {
 }
 
 class _FindAgenciesState extends State<FindAgencies> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +28,8 @@ class _FindAgenciesState extends State<FindAgencies> {
                 child: Row(
                   children: const [
                     Expanded(
-                      child: Text('ADIP Yojna',
+                      child: Text(
+                        'ADIP Yojna',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -37,8 +37,16 @@ class _FindAgenciesState extends State<FindAgencies> {
                         ),
                       ),
                     ),
-                    Icon(Icons.account_circle, size: 35, color: Colors.deepOrange,),
-                    Icon(Icons.add_to_home_screen, size: 35, color: Colors.deepOrange,),
+                    Icon(
+                      Icons.account_circle,
+                      size: 35,
+                      color: Colors.deepOrange,
+                    ),
+                    Icon(
+                      Icons.add_to_home_screen,
+                      size: 35,
+                      color: Colors.deepOrange,
+                    ),
                   ],
                 ),
               ),
@@ -46,21 +54,22 @@ class _FindAgenciesState extends State<FindAgencies> {
           ),
           const Padding(
             padding: EdgeInsets.fromLTRB(30, 30, 30, 10),
-            child: Text('Find Agencies',
+            child: Text(
+              'Find Agencies',
               style: TextStyle(
                   color: Colors.deepOrange,
                   fontSize: 30,
-                  fontWeight: FontWeight.bold
-              ),
+                  fontWeight: FontWeight.bold),
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 30, right: 30,),
-            child: Text('Sort through the list of available beneficiaries for you',
-              style: TextStyle(
-                  color: Colors.deepOrange,
-                  fontSize: 14
-              ),
+            padding: EdgeInsets.only(
+              left: 30,
+              right: 30,
+            ),
+            child: Text(
+              'Sort through the list of available beneficiaries for you',
+              style: TextStyle(color: Colors.deepOrange, fontSize: 14),
             ),
           ),
           const Padding(
@@ -75,9 +84,12 @@ class _FindAgenciesState extends State<FindAgencies> {
             padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
             child: TextButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color?>(Colors.white),
-                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-                minimumSize: MaterialStateProperty.all(const Size(double.infinity, 50)),
+                backgroundColor:
+                    MaterialStateProperty.all<Color?>(Colors.white),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10))),
+                minimumSize:
+                    MaterialStateProperty.all(const Size(double.infinity, 50)),
               ),
               onPressed: () async {
                 Navigator.push(
@@ -88,16 +100,15 @@ class _FindAgenciesState extends State<FindAgencies> {
               child: const Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                  child: Text('Choose Disability',
-                      style: TextStyle(
-                        color: Colors.black45,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                      ))
-                  ),
-                ),
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: Text('Choose Disability',
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                        ))),
               ),
+            ),
           ),
         ],
       ),
