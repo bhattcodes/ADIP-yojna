@@ -30,6 +30,7 @@ class AuthMethods {
     uid = _auth.currentUser!.uid;
   }
 
+// add null values udid to the firebase
   Future<String> addUdids({
     required String udid,
   }) async {
@@ -57,6 +58,15 @@ class AuthMethods {
     return res;
   }
 
+// get data from firebase
+  Future<model.User> getdata({
+    required String udid,
+  }) async {
+    DocumentSnapshot snap =
+        await _firestore.collection('users').doc(udid).get();
+    return model.User.fromSnap(snap);
+  }
+
   //signup user
   Future<String> signUpUser({
     required String udid,
@@ -73,8 +83,8 @@ class AuthMethods {
           state.isNotEmpty) {
         // register user
 
-        print(udid);
-        print(cred);
+        // print(udid);
+        // print(cred);
 
         // modeling our userdata and adding to FB database
 

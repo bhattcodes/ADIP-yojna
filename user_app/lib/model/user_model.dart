@@ -23,12 +23,16 @@ class User {
         "state": state,
       };
 
-  // take a docmnt snap and convert it into user model
+  //take a docmnt snap and convert it into user model
 
-  // static User fromSnap(DocumentSnapshot snap) {
-  //   var snapshot = snap.data() as Map<String, dynamic>;
-  //   return User(
-  //
-  //   );
-  // }
+  static User fromSnap(DocumentSnapshot snap) {
+    var snapshot = snap.data() as Map<String, dynamic>;
+    return User(
+      udid: snapshot['udid'],
+      name: snapshot['name'],
+      mobile: snapshot['mobile'],
+      email: snapshot['email'],
+      state: snapshot['state'],
+    );
+  }
 }
